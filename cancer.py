@@ -27,12 +27,10 @@ class cancer_detect:
 
     def predict(self, image):
         try:
-            #print(self.output_name)
             image=cv2.imread(image)
             self.processed_image=self.preprocess_input(image)
             results= self.net.infer(inputs={self.input_name:self.processed_image})
             result = results[self.output_name]
-            result = np.argmax(np.exp(result)/sum(np.exp(result)))
             return result
         except Exception as e:
             log.error('Face detection failed, Could not detect any face in the frame')
