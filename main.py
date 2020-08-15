@@ -10,7 +10,7 @@ import logging as log
 def main(args):
     skmodel = args.SK
     device = args.D
-    video_file = args.V
+    image_file = args.V
 
     start_model_load_time = time.time()
 
@@ -26,7 +26,7 @@ def main(args):
     start_inference_time = time.time()
         
     try:
-        print(sk_model.predict(video_file))
+        print(sk_model.predict(image_file))
 
         total_time = time.time() - start_inference_time
         total_inference_time = round(total_time, 1)
