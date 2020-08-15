@@ -33,7 +33,7 @@ class cancer_detect:
             result = results[self.output_name]
             return result
         except Exception as e:
-            log.error('Face detection failed, Could not detect any face in the frame')
+            log.error('skin detection failed, Could not detect any skin in the frame')
             exit()
 
 
