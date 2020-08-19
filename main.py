@@ -10,7 +10,7 @@ import logging as log
 def main(args):
     skmodel = args.SK
     device = args.D
-    image_file = args.V
+    image_file = args.I
 
     start_model_load_time = time.time()
 
@@ -42,11 +42,11 @@ def main(args):
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
     
-    parser.add_argument('-V', default=None,
-                        help = "Input file, User can enter path of video file or enter cam for webcam.")
+    parser.add_argument('-I', default=None,
+                        help = "Input file, User can enter path of image file or enter cam for webcam.")
     
     parser.add_argument('-SK', required=True,
-                        help = "Path to xml file of Face detection model.")
+                        help = "Path to xml file of skin cancer detection model.")
     
     parser.add_argument('-D', default='CPU',
                         help = "specifying device like CPU,GPU,VPU,FPGA to run inference.")

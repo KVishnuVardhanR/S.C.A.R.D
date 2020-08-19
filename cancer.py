@@ -1,6 +1,7 @@
 from openvino.inference_engine import IENetwork, IECore
 import cv2
 import numpy as np
+from scipy.special import softmax
 import logging as log
 
 class cancer_detect:
@@ -31,9 +32,10 @@ class cancer_detect:
             self.processed_image=self.preprocess_input(image)
             results= self.net.infer(inputs={self.input_name:self.processed_image})
             result = results[self.output_name]
+            result = np.argmax(softmax(result)) 
             return result
         except Exception as e:
-            log.error('skin detection failed, Could not detect any skin in the frame')
+            log.error('skin detection failed, Could not detect any image of the skin in the frame')
             exit()
 
 
@@ -42,7 +44,8 @@ class cancer_detect:
 
     def preprocess_input(self, image):
         self.image = cv2.resize(image, (224, 224))
-        self.image = self.image.transpose((2,0,1))
+        #self.image = self.image.transpose((2,0,1))
+        
         self.image = self.image.reshape(1, 3, 224, 224)
         return self.image
 
