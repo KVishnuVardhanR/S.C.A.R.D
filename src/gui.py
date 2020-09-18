@@ -85,7 +85,7 @@ def register():
     return xval
 
 def open_doc():
-    os.startfile('C:/Users/Vishnu_K/Documents/My_Projects/Py_Pojects/skin_cancer_detection/resources/Reducing_the_Risk_of_Skin_Cancer.docx')
+    os.startfile('C:/Users/Vishnu_K/Documents/My_Projects/Py_Pojects/S.C.A.R.D/resources/Reducing_the_Risk_of_Skin_Cancer.pdf')
 
 def prediction(text):                                                
     kin = tk.Tk()
@@ -94,20 +94,11 @@ def prediction(text):
     kin.geometry("500x500")
     kin.wm_title('S.C.A.R.D')
     
-    #canvas = Canvas(kin, height=350, width=500, bg = 'white')
-    
-    #imag = Image.open(image_file)
-    #imag = imag. resize((500, 450), Image. ANTIALIAS)
-    #image = ImageTk.PhotoImage(imag)
-    #canvas.create_image(250, 175, anchor=CENTER, image = image)
-    
     label1 = tk.Label(kin, text=text, bg="white", fg="black",font = NORM_FONT)
     label1.pack()
 
     label2 = tk.Label(kin, text='\nClick Open remedies button to \nget the list of remedies \nto prevent further damage of\n skin cancer.', fg="black",font = NORM_FONT)
     label2.pack(fill='x')
-    
-    #canvas.pack(fill = 'x')
     
     B1 = ttk.Button(kin, text ='Next',command = kin.destroy)#.place(x=420,y=475)
     B1.pack(side = tk.BOTTOM)
