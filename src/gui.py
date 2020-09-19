@@ -95,9 +95,9 @@ def prediction(text):
     kin.wm_title('S.C.A.R.D')
     
     label1 = tk.Label(kin, text=text, bg="white", fg="black",font = NORM_FONT)
-    label1.pack()
+    label1.pack(fill = 'x')
 
-    label2 = tk.Label(kin, text='\nClick Open remedies button to \nget the list of remedies \nto prevent further damage of\n skin cancer.', fg="black",font = NORM_FONT)
+    label2 = tk.Label(kin, text='\n\n\n\n\nClick \"Open remedies\" button to get the list of remedies \nto prevent further damage of skin cancer.', fg="black",font = ('Verdana',12))
     label2.pack(fill='x')
     
     B1 = ttk.Button(kin, text ='Next',command = kin.destroy)#.place(x=420,y=475)

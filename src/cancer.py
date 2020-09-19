@@ -1,7 +1,6 @@
 from openvino.inference_engine import IENetwork, IECore
 import cv2
 import numpy as np
-from scipy.special import softmax
 import logging as log
 
 class cancer_detect:
