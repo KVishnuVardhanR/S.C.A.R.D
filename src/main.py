@@ -3,7 +3,8 @@ from cancer import cancer_detect
 import logging as log
 import numpy as np
 from tkinter import filedialog
-from gui import startpage, register, prediction, finished, additional_help, location, continue_or_back
+from gui import startpage, register, prediction, finished
+from gui import additional_help, location, continue_or_back
 from googlesearch import search  
 import webbrowser
 
