@@ -84,6 +84,60 @@ def register():
     root.mainloop()
     return xval
 
+def ask_for_input():
+    root = Tk()
+
+    #Providing Geometry to the form
+    root.geometry("500x500")
+
+    #Providing title to the form
+    root.title('S.C.A.R.D')
+    root.iconbitmap(default='resources/download.ico')
+
+    #this creates 'Label' widget for Registration Form and uses place() method.
+    label_0 =Label(root,text="Please provide an image for analysis", width=20,font=("bold",20))
+    #place method in tkinter is  geometry manager it is used to organize widgets by placing them in specific position
+    label_0.pack(side = 'top',fill = 'x')
+
+
+    label_4 =Label(root,text="You can either Take a picture or Upload?", width=35,font=("bold",12))
+    label_4.place(x=40,y=130)
+
+     #the variable 'var' mentioned here holds Integer Value, by deault 0
+    var=IntVar()
+
+    def getval():
+        global xval
+        if var.get() == 1:
+            xval = 1
+        elif var.get() ==2:
+            xval = 2
+            
+    #this creates 'Radio button' widget and uses place() method
+    Radiobutton(root,text="Take a pic",padx= 5, variable= var, value=1).place(x = 135, y = 200)
+    Radiobutton(root,text="Upload from PC", variable= var, value=2).place(x = 325, y = 200)
+
+    ttk.Button(root, text='Submit' , width=20, command = getval).place(x=180,y=350)
+    
+    ttk.Button(root, text ='Next',command = root.destroy).place(x=420,y=475)
+    
+    root.mainloop()
+    return xval
+
+
+def openfile():
+    """
+    This function opens a dialog box asking to choose an image file from
+    your pc.
+
+    Returns: It returns the filename
+    """
+    filename = filedialog.askopenfilename(initialdir = '/',
+                                          title = 'Open file',
+                                          filetypes = (('Image files', '*.jpg'), ('All files','*.*')))
+    return filename
+
+
 def open_doc():
     os.startfile('C:/Users/Vishnu_K/Documents/My_Projects/Py_Pojects/S.C.A.R.D/resources/Reducing_the_Risk_of_Skin_Cancer.pdf')
 
