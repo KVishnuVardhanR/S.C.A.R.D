@@ -3,7 +3,7 @@ from cancer import cancer_detect
 import logging as log
 import numpy as np
 from tkinter import filedialog
-from gui import startpage, register, prediction, finished, additional_help, location
+from gui import startpage, register, prediction, finished, additional_help, location, continue_or_back
 from googlesearch import search  
 import webbrowser
 
@@ -61,35 +61,43 @@ prediction(txt)
 
 # Enabling Smart features for the patient
 if identity == 1:
-    
-    # A dialog box to choose a smart feature
-    y = additional_help()
 
-    if y == 1:
+    # A while loop is used so that the user can explore both the options
+    z = 1
+    while z == 1:
+            
+        # A dialog box to choose a smart feature
+        y = additional_help()
+        if y == 1:
+            
+            # A dialog box to get the location of the patient
+            address = location()
+
+            # to search the query
+            query = "skin cancer specialists in "+address+" practo"
+              
+            for j in search(query, tld="co.in", num=10, stop=10, pause=2): 
+                link = j
+                break
+
+            # opening the link in browser
+            webbrowser.open(link)
+
         
-        # A dialog box to get the location of the patient
-        address = location()
+        elif y == 2:
+             
+            query = "skin cancer forums"
+              
+            for j in search(query, tld="co.in", num=10, stop=10, pause=2): 
+                link = j
+                break
 
-        # to search the query
-        query = "skin cancer specialists in "+address+" practo"
-          
-        for j in search(query, tld="co.in", num=10, stop=10, pause=2): 
-            link = j
+            webbrowser.open(link)
+
+        z = continue_or_back()
+
+        if z == 2:
             break
-
-        # opening the link in browser
-        webbrowser.open(link)
-
-    
-    elif y == 2:
-         
-        query = "skin cancer forums"
-          
-        for j in search(query, tld="co.in", num=10, stop=10, pause=2): 
-            link = j
-            break
-
-        webbrowser.open(link)
 
 # A Thank you dialog box
 finished()    

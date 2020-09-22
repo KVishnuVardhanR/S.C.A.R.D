@@ -133,6 +133,48 @@ def finished():
     #this will run the mainloop.
     root.mainloop()
 
+
+def continue_or_back():
+    root = Tk()
+
+    #Providing Geometry to the form
+    root.geometry("500x500")
+
+    #Providing title to the form
+    root.title('S.C.A.R.D')
+    root.iconbitmap(default='resources/download.ico')
+
+    #this creates 'Label' widget for Registration Form and uses place() method.
+    label_0 =Label(root,text="Thank you for using S.C.A.R.D", width=20,font=("bold",20))
+    #place method in tkinter is  geometry manager it is used to organize widgets by placing them in specific position
+    label_0.pack(side = 'top',fill = 'x')
+
+
+    label_4 =Label(root,text="Do you want to go back?", width=20,font=("bold",20))
+    label_4.place(x=40,y=130)
+
+     #the variable 'var' mentioned here holds Integer Value, by deault 0
+    var=IntVar()
+
+    def getval():
+        global xval
+        if var.get() == 1:
+            xval = 1
+        elif var.get() ==2:
+            xval = 2
+            
+    #this creates 'Radio button' widget and uses place() method
+    Radiobutton(root,text="Yes",padx= 5, variable= var, value=1).place(x = 135, y = 200)
+    Radiobutton(root,text="No", variable= var, value=2).place(x = 325, y = 200)
+
+    ttk.Button(root, text='Submit' , width=20, command = getval).place(x=180,y=350)
+    
+    ttk.Button(root, text ='Next',command = root.destroy).place(x=420,y=475)
+    
+    root.mainloop()
+    return xval
+
+
 def additional_help():
     root = Tk()
 
