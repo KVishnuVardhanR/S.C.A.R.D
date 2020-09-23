@@ -1,5 +1,5 @@
 # S.C.A.R.D
-This project dubbed S.C.A.R.D [Skin Cancer Detection At Edge for Real time Diagnostics] intends in designing a “Skin Cancer Detector with AI at Edge”,  where it helps not only Doctors and Dermatologists to predict the probability of skin cancer, but also for the patients and to suggest remedies to prevent further damage, connecting to forums for 
+This project dubbed S.C.A.R.D **[Skin Cancer Detection At Edge for Real time Diagnostics]** intends in designing a **“Skin Cancer Detector with AI at Edge”**,  where it helps not only Doctors and Dermatologists to predict the probability of skin cancer, but also for the patients and to suggest remedies to prevent further damage, connecting to forums for 
 discussions and giving a smart search for skin specialists based on their geographic location with a very minimum hardware 
 requirements.
 
