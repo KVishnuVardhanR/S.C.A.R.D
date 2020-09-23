@@ -114,7 +114,7 @@ def ask_for_input():
             xval = 2
             
     #this creates 'Radio button' widget and uses place() method
-    Radiobutton(root,text="Take a pic",padx= 5, variable= var, value=1).place(x = 135, y = 200)
+    Radiobutton(root,text="Take a picture",padx= 5, variable= var, value=1).place(x = 135, y = 200)
     Radiobutton(root,text="Upload from PC", variable= var, value=2).place(x = 325, y = 200)
 
     ttk.Button(root, text='Submit' , width=20, command = getval).place(x=180,y=350)
