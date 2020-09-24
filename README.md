@@ -1,7 +1,5 @@
 # S.C.A.R.D
-This project dubbed S.C.A.R.D **[Skin Cancer Detection At Edge for Real time Diagnostics]** intends in designing a **“Skin Cancer Detector with AI at Edge”**,  where it helps not only Doctors and Dermatologists to predict the probability of skin cancer, but also for the patients and to suggest remedies to prevent further damage, connecting to forums for 
-discussions and giving a smart search for skin specialists based on their geographic location with a very minimum hardware 
-requirements.
+This project dubbed **S.C.A.R.D [Skin Cancer Detection At Edge for Real time Diagnostics]** intends in designing a **“Skin Cancer Detector with AI at Edge”**,  where it helps not only Doctors and Dermatologists to predict the probability of skin cancer, but also for the patients and to suggest remedies to prevent further damage, **connecting to forums for discussions and giving a smart search for skin specialists based on their geographic location with a very minimum hardware requirements**.
 
 # Getting Started 
 - Setup your local environment:
@@ -39,6 +37,7 @@ requirements.
 	
 **Note: This project has been tested only in Windows 10 Operating System environment with Intel core i3-7100 processor which has an Intel Integrated GPU HD Graphics 630.**  
 
+
 ## Demo
 
 - First, initialize the OpenVINO environment:
@@ -47,8 +46,8 @@ requirements.
 - Next, ```cd``` to the project directory:
 - Now, run the following command to run the application:
   - ```python src\main.py ```
-- You can see the complete program running in this [link](https://youtu.be/L05lsLCLja8)
 
 ## References
-
-  
+- The entire working demo of the project can be veiwed through this [link](https://youtu.be/L05lsLCLja8).
+- The **Keras model** which has been trained and saved as **.h5 file** in the **Kaggle Kernel**  converted to
+**TensorFlow Frozen inference gragh .pb file** is further converted to **IR [Intermediate Representation] format** using **OpenVINO** can be found [here](https://www.dlology.com/blog/how-to-run-keras-model-inference-x3-times-faster-with-cpu-and-intel-openvino-1/).     
