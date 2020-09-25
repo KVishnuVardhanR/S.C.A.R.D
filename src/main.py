@@ -107,4 +107,4 @@ try:
     print("The total inference time of the model is :"+str(total_inference_time)+"sec")      
 
 except Exception as e:
-    print("Could not run Inference: ", e)
+    log.error("Could not run Inference: ", e)

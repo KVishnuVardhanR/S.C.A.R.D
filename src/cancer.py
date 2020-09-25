@@ -4,6 +4,13 @@ import numpy as np
 import logging as log
 
 def snapshot():
+    """
+    This function opens the camera and when user presses "Space bar" it takes
+    a snapshot of the user and when the user presses "Escape" it exits the
+    function
+
+    Returns: It returns the image path which has been taken by the user
+    """
     cam = cv2.VideoCapture(0)
 
     cv2.namedWindow("test")

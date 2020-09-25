@@ -6,7 +6,9 @@ import os
 
 NORM_FONT=('Verdana',20)
 
-def startpage(text):                                                
+def startpage(text):
+    """ This function is the Introductory window dialog """
+    
     popup = tk.Tk()
 
     popup.iconbitmap(default='resources/download.ico')
@@ -33,6 +35,12 @@ def startpage(text):
 
 
 def register():
+    """
+    This function is the registration page which is used for identifcation of
+    the user as patient or doctor
+
+    Returns: It returns the identification of the user
+    """
     root = Tk()
 
     #Providing Geometry to the form
@@ -56,7 +64,7 @@ def register():
     entry_1.place(x=240,y=130)
 
     
-    #this creates 'Label' widget for Gender and uses place() method.
+    #this creates 'Label' widget for Identification and uses place() method.
     label_4 =Label(root,text="which one describes you?", width=20,font=("bold",10))
     label_4.place(x=70,y=230)
 
@@ -79,12 +87,17 @@ def register():
     ttk.Button(root, text='Submit' , width=20, command = getval).place(x=180,y=380)
     
     ttk.Button(root, text ='Next',command = root.destroy).place(x=420,y=475)
-    #B1.pack(side = tk.RIGHT)
+
     #this will run the mainloop.
     root.mainloop()
     return xval
 
 def ask_for_input():
+    """
+    This function is used to ask the user abiut how to give the input, whether to upload or taking pic
+
+    Returns: It returns the type the user wants to give the input
+    """
     root = Tk()
 
     #Providing Geometry to the form
@@ -94,16 +107,15 @@ def ask_for_input():
     root.title('S.C.A.R.D')
     root.iconbitmap(default='resources/download.ico')
 
-    #this creates 'Label' widget for Registration Form and uses place() method.
+    #this creates 'Label' widget and uses place() method.
     label_0 =Label(root,text="Please provide an image for analysis", width=20,font=("bold",20))
-    #place method in tkinter is  geometry manager it is used to organize widgets by placing them in specific position
     label_0.pack(side = 'top',fill = 'x')
 
 
     label_4 =Label(root,text="You can either Take a picture or Upload?", width=35,font=("bold",12))
     label_4.place(x=40,y=130)
 
-     #the variable 'var' mentioned here holds Integer Value, by deault 0
+    #the variable 'var' mentioned here holds Integer Value, by deault 0
     var=IntVar()
 
     def getval():
@@ -139,9 +151,12 @@ def openfile():
 
 
 def open_doc():
+    """ This function opens the .pdf file """
     os.startfile('C:/Users/Vishnu_K/Documents/My_Projects/Py_Pojects/S.C.A.R.D/resources/Reducing_the_Risk_of_Skin_Cancer.pdf')
 
-def prediction(text):                                                
+def prediction(text):
+    """ This function displays the prediction of the model """
+    
     kin = tk.Tk()
 
     kin.iconbitmap(default='resources/download.ico')
@@ -154,16 +169,17 @@ def prediction(text):
     label2 = tk.Label(kin, text='\n\n\n\n\nClick \"Open remedies\" button to get the list of remedies \nto prevent further damage of skin cancer.', fg="black",font = ('Verdana',12))
     label2.pack(fill='x')
     
-    B1 = ttk.Button(kin, text ='Next',command = kin.destroy)#.place(x=420,y=475)
+    B1 = ttk.Button(kin, text ='Next',command = kin.destroy)
     B1.pack(side = tk.BOTTOM)
         
-    B2 = ttk.Button(kin, text ='Open Remedies',command = open_doc)#.place(x=420,y=475)
+    B2 = ttk.Button(kin, text ='Open Remedies',command = open_doc)
 
     B2.pack(side = tk.BOTTOM)
     
     kin.mainloop()
     
 def finished():
+    """ This function is the finished window dialog """
     root = Tk()
 
     #Providing Geometry to the form
@@ -173,22 +189,24 @@ def finished():
     root.title('S.C.A.R.D')
     root.iconbitmap(default='resources/download.ico')
 
-    #this creates 'Label' widget for Registration Form and uses place() method.
+    #this creates 'Label' widget and uses place() method.
     label_0 =Label(root,text="Thank you for using S.C.A.R.D", width=20,font=("bold",20))
-    #place method in tkinter is  geometry manager it is used to organize widgets by placing them in specific position
     label_0.pack(side = 'top',fill = 'x')
     
-    #this creates 'Label' widget for Gender and uses place() method.
+    #this creates 'Label' widget and uses place() method.
     label_4 =Label(root,text="Wishing good health for you and your family!!", width=40,font=("bold",15))
     label_4.place(x=40,y=130)
     
     ttk.Button(root, text ='Exit',command = root.destroy).place(x=420,y=225)
-    #B1.pack(side = tk.RIGHT)
+    
     #this will run the mainloop.
     root.mainloop()
 
 
 def continue_or_back():
+    """
+    This function will help the patient to explore other additional features 
+    """
     root = Tk()
 
     #Providing Geometry to the form
@@ -198,9 +216,8 @@ def continue_or_back():
     root.title('S.C.A.R.D')
     root.iconbitmap(default='resources/download.ico')
 
-    #this creates 'Label' widget for Registration Form and uses place() method.
+    #this creates 'Label' widget and uses place() method.
     label_0 =Label(root,text="Thank you for using S.C.A.R.D", width=20,font=("bold",20))
-    #place method in tkinter is  geometry manager it is used to organize widgets by placing them in specific position
     label_0.pack(side = 'top',fill = 'x')
 
 
@@ -230,6 +247,7 @@ def continue_or_back():
 
 
 def additional_help():
+    """ This function helps the patients to get access to smart features """
     root = Tk()
 
     #Providing Geometry to the form
@@ -239,12 +257,12 @@ def additional_help():
     root.title('S.C.A.R.D')
     root.iconbitmap(default='resources/download.ico')
 
-    #this creates 'Label' widget for Registration Form and uses place() method.
+    #this creates 'Label' widget and uses place() method.
     label_0 =Label(root,text="Additional help", width=20,font=("bold",20))
     #place method in tkinter is  geometry manager it is used to organize widgets by placing them in specific position
     label_0.place(x=90,y=60)
         
-    #this creates 'Label' widget for Gender and uses place() method.
+    #this creates 'Label' widget and uses place() method.
     label_4 =Label(root,text="Choose one of the following?", width=20,font=("bold",10))
     label_4.place(x=40,y=230)
 
@@ -267,13 +285,14 @@ def additional_help():
     ttk.Button(root, text='Submit' , width=20, command = getval).place(x=180,y=350)
         
     ttk.Button(root, text ='Next',command = root.destroy).place(x=420,y=475)
-        #B1.pack(side = tk.RIGHT)
-        #this will run the mainloop.
+
+    #this will run the mainloop.
     root.mainloop()
     return xval
 
 
 def location():
+    """ This function is used to ask the patient's address location and returns it """
     root = Tk()
 
     #Providing Geometry to the form
@@ -283,12 +302,11 @@ def location():
     root.title('S.C.A.R.D')
     root.iconbitmap(default='resources/download.ico')
 
-    #this creates 'Label' widget for Registration Form and uses place() method.
+    #this creates 'Label' widget and uses place() method.
     label_0 =Label(root,text="Search for skin specialist", width=20,font=("bold",20))
-    #place method in tkinter is  geometry manager it is used to organize widgets by placing them in specific position
     label_0.pack(side = 'top', fill ='x')
 
-    #this creates 'Label' widget for Fullname and uses place() method.
+    #this creates 'Label' widget and uses place() method.
     label_1 =Label(root,text="Enter your Area", width=20,font=("bold",10))
     label_1.place(x=80,y=130)
 
@@ -298,7 +316,7 @@ def location():
     entry_1.place(x=240,y=130)
 
             
-    #this creates 'Label' widget for Gender and uses place() method.
+    #this creates 'Label' widget for example and uses place() method.
     label_4 =Label(root,text="Ex: area = whitefield bangalore", width=40,font=("bold",10))
     label_4.place(x =80, y = 150)
 
@@ -311,7 +329,7 @@ def location():
     ttk.Button(root, text='Submit' , width=20, command = getval).place(x=180,y=380)
             
     ttk.Button(root, text ='Next',command = root.destroy).place(x=420,y=475)
-    #B1.pack(side = tk.RIGHT)
+
     #this will run the mainloop.
     root.mainloop()
     return xval
