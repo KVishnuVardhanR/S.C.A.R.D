@@ -32,7 +32,7 @@ This project dubbed **S.C.A.R.D [Skin Cancer Detection At Edge for Real time Dia
 					   |_ Kaggle-Kernel-skin-cancer-detect.ipynb
 	
 ```
-  - The project directory contains a ```resources``` folder which has an .avi file, can be used to test the input file for the project.
+  - The project directory contains a ```test_images``` folder which has 2 images **[Benign, Malignant]** can be used to test the model for predictions and to check their performances **i.e.;[Time take for Loading model, Time taken for performing inference and How accurate are the predictions]**.
   - It has ```requirements.txt``` file which contains all the necessary dependencies to be installed before running the project.
 	
 **Note: This project has been tested only in Windows 10 Operating System environment with Intel core i3-7100 processor which has an Intel Integrated GPU HD Graphics 630.**  
